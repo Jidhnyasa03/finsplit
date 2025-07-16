@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Expense - FinSplit</title>
+
+    <!-- ✅ Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ✅ Optional: Your custom styles -->
+    <link rel="stylesheet" href="CSS/style.css" />
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+
+<!-- ✅ Global Navbar -->
+<div id="navbar-container"></div>
+
+<!-- ✅ Main Content -->
+<main class="flex-1 p-6">
+    <div class="max-w-xl mx-auto bg-white p-6 rounded shadow">
+        <h2 class="text-2xl font-semibold text-indigo-600 mb-4">Add New Expense</h2>
+
+        <form id="expenseForm" class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Category</label>
+                <input type="text" id="category" required class="w-full mt-1 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Amount (₹)</label>
+                <input type="number" id="amount" required min="1" step="0.01" class="w-full mt-1 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Paid By</label>
+                <input type="text" id="paidBy" required class="w-full mt-1 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Date</label>
+                <input type="date" id="date" required class="w-full mt-1 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+
+            <button type="submit" class="w-full bg-indigo-600 text-white font-semibold py-2 rounded hover:bg-indigo-700 transition">
+                Add Expense
+            </button>
+        </form>
+
+        <p id="successMessage" class="text-green-600 mt-4 hidden">✅ Expense added successfully!</p>
+    </div>
+</main>
+
+<!-- ✅ Scripts -->
+<script src="js/load-navbar.js"></script>
+<script src="js/add-expense.js"></script>
+</body>
+</html>
